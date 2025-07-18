@@ -7,6 +7,7 @@ import DirectorCard from "./pages/DirectorCard"
 import DirectorForm from "./pages/DirectorForm"
 import MovieCard from "./pages/MovieCard"
 import MovieForm from "./pages/MovieForm"
+import ErrorPage from "./pages/ErrorPage"
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
                         <Route path="movies/:movieId" element={<MovieCard />} />
                     </Route>
                 </Route>
+                <Route path="*" element={<ErrorPage />} />
             </Routes>
         </BrowserRouter>
         </>
