@@ -1,13 +1,16 @@
 import { useState } from "react"
 import { v4 as uuidv4 } from 'uuid'
+import { useOutletContext, useParams } from "react-router-dom"
 
 function MovieForm() {
   const [title, setTitle] = useState("")
   const [time, setTime] = useState("")
   const [genres, setGenres] = useState("")
 
-  // Replace me
-  const director = null
+  const { directors, setDirectors } = useOutletContext()
+  const { id } = useParams()
+
+  const director = directors.find((d) => d.id.toString() === id)
   
   if (!director) { return <h2>Director not found.</h2>}
 
@@ -30,8 +33,11 @@ function MovieForm() {
       if (!r.ok) { throw new Error("failed to add movie") }
       return r.json()
     })
-    .then(data => {
-      console.log(data)
+    .then((updatedDirector) => {
+        const updatedDirectors = directors.map(d =>
+          d.id.toString() === id ? updatedDirector : d
+        )
+        setDirectors(updatedDirectors)
       // handle context/state changes
       // navigate to newly created movie page
     })

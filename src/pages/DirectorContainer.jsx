@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import NavBar from '../components/NavBar';
-import DirectorList from './DirectorList';
-import DirectorCard from './DirectorCard';
+import { Outlet } from 'react-router-dom';
 
 const DirectorContainer = () => {
     const [directors, setDirectors] = useState([])
@@ -21,8 +20,7 @@ const DirectorContainer = () => {
             <NavBar />
             <main>
                 <h1>Welcome to the Director's Directory!</h1>
-                <DirectorList />
-                <DirectorCard />
+                <Outlet context={{directors, setDirectors}} />
             </main>
         </>
     );
