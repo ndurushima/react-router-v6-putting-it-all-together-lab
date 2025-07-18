@@ -5,7 +5,7 @@ const DirectorList = () => {
 
     const displayDirectors = directors.map(d => (
     <li key={d.id}>
-      <Link to={`${d.id}`}>{d.name}</Link>
+      <Link to={`/directors/${d.id}`}>{d.name}</Link>
     </li>
   ))
 

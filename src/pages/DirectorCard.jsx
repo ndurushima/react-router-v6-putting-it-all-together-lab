@@ -19,11 +19,11 @@ function DirectorCard() {
         <ul>
             {director.movies.map((movie) => (
             <li key={movie.id}>
-                <a>{movie.title}</a>
+                <Link to={`movies/${movie.id}`}>{movie.title}</Link>
             </li>
             ))}
         </ul>
-        <Link to={`movies/new`}>Add New Movie</Link>
+        <Link to={`movies/new`}>Add a New Movie</Link>
         <Outlet context={{ director, directors, setDirectors }}/>
         </div>
     )
