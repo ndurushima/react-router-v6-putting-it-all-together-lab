@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import NavBar from '../components/NavBar';
+import DirectorList from './DirectorList';
+import DirectorCard from './DirectorCard';
 
 const DirectorContainer = () => {
     const [directors, setDirectors] = useState([])
@@ -19,7 +21,8 @@ const DirectorContainer = () => {
             <NavBar />
             <main>
                 <h1>Welcome to the Director's Directory!</h1>
-                {/* all director components should render here depending on route */}
+                <DirectorList />
+                <DirectorCard />
             </main>
         </>
     );

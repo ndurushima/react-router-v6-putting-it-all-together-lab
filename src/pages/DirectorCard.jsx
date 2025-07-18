@@ -1,3 +1,6 @@
+import DirectorForm from "./DirectorForm"
+import MovieCard from "./MovieCard"
+import MovieForm from "./MovieForm"
 
 function DirectorCard() {
     // Replace me
@@ -20,7 +23,9 @@ function DirectorCard() {
             ))}
         </ul>
         <Link to={`movies/new`}>Add New Movie</Link>
-        {/* Movie compoenents should render here depending on route */}
+        <DirectorForm />
+        <MovieCard />
+        <MovieForm />
         </div>
     )
 }
